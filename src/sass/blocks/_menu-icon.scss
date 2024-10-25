@@ -1,0 +1,41 @@
+// Menu Icon
+
+.rt-phone-1 {
+	display: flex;
+	align-items: center;
+	line-height: 1.4;
+	.phone-icon {
+		padding-right: 8px;
+	}
+	.phone-label {
+		padding-right: 8px;
+	}
+	.content {
+		display: flex;
+		align-items: center;
+	}
+}
+.rt-phone-2 {
+	display: flex;
+	align-items: center;
+	line-height: 1.4;
+	.phone-icon {
+		color: $button_color;
+		padding-right: 8px;
+		i {
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			background-color: $primary_color;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.phone-label {
+		color: #6a6a6a;
+		font-size: 13px;
+		font-weight: 600;
+		padding-right: 8px;
+	}
+}
