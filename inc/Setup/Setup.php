@@ -35,7 +35,7 @@ class Setup {
 		$sizes = [
 			'foodymat-size1' => [ 1344, 625, true ],
 			'foodymat-size2'  => [ 960, 520, true ],
-			'foodymat-size3'  => [ 640, 450, true ],
+			'foodymat-size3'  => [ 660, 550, true ],
 			'foodymat-size4'  => [ 413, 220, true ],
 			'foodymat-size5'  => [ 600, 682, true ],
 			'foodymat-size6'  => [ 960, 960, true ],

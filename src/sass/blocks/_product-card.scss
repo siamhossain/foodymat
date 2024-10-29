@@ -1,0 +1,147 @@
+//product card style
+
+.product-item {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	.img-wrap {
+		.item-img {
+			line-height: 0;
+		}
+	}
+	.item-content {
+		position: relative;
+		.product-categories {
+			margin-bottom: 15px;
+			a {
+				border: 1px solid #D0D0D0;
+				border-radius: 20px;
+				font-weight: 600;
+				font-size: 12px;
+				line-height: 15px;
+				color: #333333;
+				padding: 4px 10px;
+			}
+		}
+		.product-rating {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 4px;
+			margin-bottom: 10px;
+			span {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 18px;
+				color: #333333;
+				vertical-align: middle;
+			}
+		}
+		.discount-flag {
+			position: absolute;
+			top: 45px;
+			right: -55px;
+			background-color: var(--rt-primary-color);
+			color: #FFFFFF;
+			transform: rotate(45deg);
+			padding: 7px 50px;
+			width: 250px;
+			height: 40px;
+		}
+		.excerpt {
+			font-weight: 500;
+			font-size: 15px;
+			line-height: 28px;
+			color: #333333;
+			margin-bottom: 30px;
+		}
+	}
+	.btn-wrap {
+		a {
+			border: 1px solid $primary_color;
+			padding: 10px 22px;
+			border-radius: 50px;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 18px;
+
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+
+
+	&-style1 {
+		display: flex;
+		justify-content: flex-end;
+		border-radius: 20px;
+		overflow: hidden;
+		background-color: #FFF3F3;
+		text-align: center;
+		.img-wrap {
+			position: relative;
+			flex: 0 1 50%;
+		}
+		.item-content {
+			padding: 115px 50px;
+			flex: 0 1 50%;
+			.item-title {
+				@include font_size(32px, 40px);
+				a {
+					color: $title_color;
+				}
+			}
+			.price-order-btn-wrap {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 45px;
+				.item-price {
+					position: relative;
+					.original-price {
+						font-weight: 500;
+						font-size: 20px;
+						line-height: 25px;
+						color: #848484;
+					}
+					.sale-price {
+						font-weight: 700;
+						font-size: 30px;
+						line-height: 30px;
+						color: $title_color;
+						margin-right: 8px;
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						right: -22px;
+						width: 1px;
+						height: 40px;
+						background-color: #D0D0D0;
+					}
+				}
+			}
+		}
+
+	}
+}
+.product-item.reverse {
+	.item-content {
+		.discount-flag {
+			position: absolute;
+			top: 45px;
+			right: auto;
+			left: -55px;
+			background-color: var(--rt-primary-color);
+			color: #FFFFFF;
+			transform: rotate(-45deg);
+			padding: 7px 50px;
+			width: 250px;
+			height: 40px;
+		}
+	}
+}
+
