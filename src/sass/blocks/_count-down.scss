@@ -1,0 +1,57 @@
+.countdown-container {
+	ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		list-style: none;
+		flex-wrap: wrap;
+		li {
+			text-align: center;
+			.timer {
+				width: 80px;
+				height: 80px;
+				border: 1px solid $primary_color;
+				border-radius: 50%;
+				font-weight: 600;
+				font-size: 30px;
+				line-height: 38px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				color: $primary_color;
+				margin-bottom: 15px;
+			}
+			.label {
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 22px;
+				color: $title-color;
+			}
+		}
+	}
+}
+
+.countdown-layout-1 {
+	.title-area {
+		.title {
+			@include font_size(50px, 62px);
+			font-weight: 700;
+			color: $title-color;
+			text-transform: capitalize;
+		}
+		.subtitle {
+			@include font_size(18px, 26px);
+			font-style: italic;
+			color: $title-color;
+			font-weight: 600;
+		}
+		.offer-text {
+			@include font_size(32px, 40px);
+			font-weight: 700;
+			color: $title-color;
+			text-transform: uppercase;
+		}
+	}
+}

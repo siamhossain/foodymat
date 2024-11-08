@@ -3,6 +3,7 @@ $columns: 12;
 $gutter: 24px;
 $spacing: 20;
 $container_width: var(--rt-container-width, 1344px);
+$container_width_lg: 1644px;
 
 //Spacing
 $paddings: ('pt': 'padding-top', 'pr': 'padding-right', 'pb': 'padding-bottom', 'pl': 'padding-left');
@@ -48,6 +49,7 @@ $black_color: #000000;
 $meta_overlay_color: #CBCBCB;
 $footer_bg_color: #006d5b;
 $footer_border_color: #177d6c;
+$pink-light: #FEF6F7;
 
 //Headers
 $dropdown_width: 240px;

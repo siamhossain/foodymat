@@ -40,6 +40,7 @@
             Foodymat.heroSlider();
 			Foodymat.ProgressBar();
 			Foodymat.rtOpenTabs();
+			Foodymat.countDown();
         },
 
 		rtElementorParallax: function () {
@@ -327,7 +328,49 @@
 			});
         },
 
-        backToTop: function () {
+
+		countDown: function() {
+			var countdownTimer;
+			const countdownDateInput = $('#elementorCountdownDate').val();
+			const $timerDays = $(".timer-days");
+			const $timerHours = $(".timer-hours");
+			const $timerMinutes = $(".timer-minutes");
+			const $timerSeconds = $(".timer-seconds");
+
+			if (countdownDateInput && !isNaN(new Date(countdownDateInput).getTime())) {
+				const countDownDate = new Date(countdownDateInput).getTime();
+
+				const updateTimer = () => {
+					const now = new Date().getTime();
+					const timeLeft = countDownDate - now;
+
+					if (timeLeft < 0) {
+						clearInterval(countdownTimer);
+						$timerDays.html("0 ");
+						$timerHours.html("0 ");
+						$timerMinutes.html("0 ");
+						$timerSeconds.html("Timer Finished");
+					} else {
+						const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+						const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+						const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+						const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+						$timerDays.html(`${days} `);
+						$timerHours.html(`${hours} `);
+						$timerMinutes.html(`${minutes} `);
+						$timerSeconds.html(`${seconds} `);
+					}
+				};
+
+				countdownTimer = setInterval(updateTimer, 1000);
+			}
+		},
+
+
+
+
+		backToTop: function () {
             /* Scroll to top */
             $('.scrollToTop').on('click', function () {
                 $('html, body').animate({scrollTop: 0}, 800);
@@ -712,6 +755,7 @@
 				Foodymat.heroSlider();
 				Foodymat.ProgressBar();
 				Foodymat.rtOpenTabs();
+				Foodymat.countDown();
             });
 
         }

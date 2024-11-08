@@ -1,16 +1,23 @@
 .default-woo-category-box {
 	.rt-swiper-slider {
 		.swiper-wrapper {
-
+			cursor: grab;
+			user-select: none;
 		}
 		.swiper-navigation {
 			.swiper-button{
-				background-color: $primary_color;
-				color: $white_color;
+				background-color: transparent;
+				color: $black_color;
 				width: 40px;
 				height: 40px;
+				border: 1px solid $primary_color;
 				border-radius: 50px;
 				top: -40px;
+				&:hover {
+					border-color: $primary_color;
+					background-color: $primary_color;
+					color: $white_color;
+				}
 			}
 			.swiper-button-prev {
 				left: auto;

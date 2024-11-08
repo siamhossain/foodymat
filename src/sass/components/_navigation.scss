@@ -78,7 +78,13 @@
 			background: $primary_color;
 			bottom: 0;
 		}
+	}
 
+	ul li ul li.current-menu-item > a,
+	ul li ul li.current-menu-ancestor > a {
+		&:before {
+			display: none;
+		}
 	}
 
 	ul li a:hover {

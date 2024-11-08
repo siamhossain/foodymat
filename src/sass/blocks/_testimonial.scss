@@ -62,6 +62,20 @@
 		}
 	}
 }
+.rt-testimonial-layout-1 {
+	.slider-item {
+		@include transition_default();
+		.author-text-info {
+			text-align: left;
+		}
+		.quote {
+			position: relative;
+			text-align: center;
+			margin-bottom: 24px;
+		}
+	}
+}
+
 .rt-testimonial-layout-1,
 .rt-testimonial-layout-7 {
 	.item-author-info {

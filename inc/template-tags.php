@@ -1049,12 +1049,12 @@ if ( ! function_exists( 'foodymat_entry_footer' ) ) {
 	function foodymat_entry_footer() {
 		if ( ! is_single() ) {
 			if ( foodymat_option( 'rt_blog_footer_visibility' ) ) { ?>
-				<footer class="entry-footer rt-button">
-					<a class="btn <?php echo esc_attr( foodymat_option('rt_blog_btn_style') ); ?>"
+				<div class="entry-footer rt-button">
+					<a class="btn <?php echo esc_attr( foodymat_option('rt_blog_btn_style') ); ?> read-more-btn"
 					   href="<?php echo esc_url( get_permalink() ) ?>" <?php if( is_numeric(foodymat_option('rt_blog_btn_radius') ) ) { ?>
 						style="border-radius: <?php echo esc_attr( foodymat_option('rt_blog_btn_radius') ); ?>px"<?php } ?>><?php echo foodymat_readmore_text() ?><i class="icon-rt-right-arrow"></i>
 					</a>
-				</footer>
+				</div>
 			<?php }
 		} else {
 			if ( ( has_tag() && foodymat_option( 'rt_single_tag_visibility' ) ) || foodymat_option( 'rt_single_share_visibility' ) ) { ?>

@@ -52,7 +52,6 @@ class Blog extends Customizer {
 					'list-2'    => __( 'List 2', 'foodymat' ),
 					'grid-2'    => __( 'Grid 2', 'foodymat' ),
 					'grid-3'    => __( 'Grid 3', 'foodymat' ),
-					'grid-4'    => __( 'Grid 4', 'foodymat' ),
 				]
 			],
 

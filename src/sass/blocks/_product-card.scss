@@ -7,6 +7,10 @@
 	.img-wrap {
 		.item-img {
 			line-height: 0;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.item-content {
@@ -39,14 +43,22 @@
 		}
 		.discount-flag {
 			position: absolute;
-			top: 45px;
-			right: -55px;
+			top: -40px;
+			left: 0;
 			background-color: var(--rt-primary-color);
-			color: #FFFFFF;
-			transform: rotate(45deg);
+			color: $white_color;
 			padding: 7px 50px;
 			width: 250px;
 			height: 40px;
+			border-radius: 0 10px 0 0;
+			@media(min-width: 1024px) {
+				position: absolute;
+				top: 45px;
+				right: -55px;
+				left: auto;
+				transform: rotate(45deg);
+				border-radius: 0;
+			}
 		}
 		.excerpt {
 			font-weight: 500;
@@ -58,16 +70,10 @@
 	}
 	.btn-wrap {
 		a {
-			border: 1px solid $primary_color;
 			padding: 10px 22px;
-			border-radius: 50px;
 			font-weight: 600;
 			font-size: 14px;
 			line-height: 18px;
-
-			i {
-				margin-right: 5px;
-			}
 		}
 	}
 
@@ -79,6 +85,9 @@
 		overflow: hidden;
 		background-color: #FFF3F3;
 		text-align: center;
+		@media(max-width: 992px) {
+			flex-direction: column;
+		}
 		.img-wrap {
 			position: relative;
 			flex: 0 1 50%;
@@ -86,6 +95,16 @@
 		.item-content {
 			padding: 115px 50px;
 			flex: 0 1 50%;
+
+			@media(max-width: 1290px) {
+				padding: 70px 40px;
+			}
+			@media(max-width: 1100px) {
+				padding: 30px 35px;
+			}
+
+
+
 			.item-title {
 				@include font_size(32px, 40px);
 				a {
@@ -95,10 +114,18 @@
 			.price-order-btn-wrap {
 				display: flex;
 				justify-content: center;
+				flex-wrap: wrap;
 				align-items: center;
 				gap: 45px;
+				@media (max-width: 768px) {
+					gap: 25px;
+				}
 				.item-price {
 					position: relative;
+					font-weight: 500;
+					font-size: 20px;
+					line-height: 25px;
+					color: #848484;
 					.original-price {
 						font-weight: 500;
 						font-size: 20px;
@@ -106,9 +133,8 @@
 						color: #848484;
 					}
 					.sale-price {
+						@include font_size(30px, 30px);
 						font-weight: 700;
-						font-size: 30px;
-						line-height: 30px;
 						color: $title_color;
 						margin-right: 8px;
 					}
@@ -121,6 +147,9 @@
 						width: 1px;
 						height: 40px;
 						background-color: #D0D0D0;
+						@media (max-width: 768px) {
+							display: none;
+						}
 					}
 				}
 			}
@@ -131,16 +160,24 @@
 .product-item.reverse {
 	.item-content {
 		.discount-flag {
-			position: absolute;
-			top: 45px;
-			right: auto;
-			left: -55px;
-			background-color: var(--rt-primary-color);
-			color: #FFFFFF;
-			transform: rotate(-45deg);
-			padding: 7px 50px;
-			width: 250px;
-			height: 40px;
+			@media(min-width: 1024px) {
+				position: absolute;
+				top: 45px;
+				right: auto;
+				left: -55px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+
+.woo-layout-style1 {
+	.product-item {
+	}
+	.show-more-btn {
+		margin-top: 20px;
+		a {
+			background-color: $pink-light;
 		}
 	}
 }

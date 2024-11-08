@@ -56,6 +56,15 @@ Section Title
 		img.spin {
 			animation: spin 15s linear infinite;
 		}
+
+		@media (max-width: 1024px) {
+			font-size: 32px;
+			line-height: 41px;
+		}
+		@media (max-width: 676px) {
+			font-size: 28px;
+			line-height: 37px;
+		}
 	}
 	.title-gradient {
 		background: linear-gradient(90deg, $title_color 7.83%, $primary_color 46.69%, $secondary_color 92.6%);
@@ -221,6 +230,50 @@ Section Title
 	.section-title-wrapper .description br,
 	.section-title-wrapper .main-title br {
 		display: none;
+	}
+}
+
+//section-title layout 3
+.title-layout-3 {
+	.title-inner-wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		.top-sub-title-wrap {
+			background: #FF8800;
+			border: 2px solid #000000;
+			display: inline-block;
+			padding: 8px 22px;
+			@media (min-width: 992px) {
+				margin-left: 70px;
+			}
+			.top-sub-title {
+				margin-bottom: 0;
+			}
+		}
+		.main-title-wrap {
+			background: $white_color;
+			border: 2px solid #000000;
+			display: inline-block;
+			padding: 6px 22px;
+			.main-title {
+				color: $title_color;
+				margin-bottom: 0;
+			}
+		}
+		.description {
+			background: $primary_color;
+			border: 2px solid #000000;
+			display: inline-block;
+			padding: 8px 22px;
+			@media (min-width: 992px) {
+				margin-left: 150px;
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
