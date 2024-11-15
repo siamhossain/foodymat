@@ -255,7 +255,7 @@ class Fns {
 		$output = 'col-lg-4';
 		if ( $blog_colum_opt ) {
 			$output = $blog_colum_opt;
-		} elseif ( foodymat_option( 'rt_blog_style' ) === 'list' ) {
+		} elseif ( foodymat_option( 'rt_blog_style' ) === 'list' || foodymat_option( 'rt_blog_style' ) === 'list-2' ) {
 			$output = 'col-lg-12';
 		} elseif ( in_array( $blog_layout, [
 				'left-sidebar',

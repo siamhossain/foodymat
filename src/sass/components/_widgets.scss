@@ -136,8 +136,9 @@ $widget_li_space: 8px;
 .wp-block-latest-posts {
 	.wp-block-latest-posts__post-title {
 		color: $body_color;
-		line-height: 1.2;
-		font-weight: 500;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 700;
 	}
 	&.wp-block-latest-posts__list {
 		li {

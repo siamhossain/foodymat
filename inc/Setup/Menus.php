@@ -25,6 +25,8 @@ class Menus {
 		register_nav_menus( [
 			'primary' => esc_html__( 'Primary', 'foodymat' ),
 			'secondary' => esc_html__( 'Secondary', 'foodymat' ),
+			'primary_left' => esc_html__( 'Primary Left', 'foodymat' ),
+			'primary_right' => esc_html__( 'Primary Right', 'foodymat' ),
 		] );
 	}
 }

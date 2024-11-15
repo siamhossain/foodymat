@@ -1,6 +1,6 @@
 .content-area {
-	padding-top: 140px;
-	padding-bottom: 140px;
+	padding-top: 120px;
+	padding-bottom: 120px;
 	@media(max-width: 767px) {
 		padding-top: 80px;
 		padding-bottom: 80px;
@@ -48,4 +48,17 @@
 }
 .foodymat-offcanvas-drawer::-webkit-scrollbar-thumb {
 	background: $primary_color;
+}
+
+
+.foodymat-accordion1 {
+	summary {
+		justify-content: space-between !important;
+	}
+	.e-n-accordion-item:first-child {
+		summary {
+			//border-top: 1px solid transparent !important;
+			border-width: 0 0 0 0 !important;
+		}
+	}
 }

@@ -27,8 +27,8 @@ get_header();
 				<p><?php foodymat_html( foodymat_option( 'rt_error_text' ), 'allow_title' ); ?></p>
 
 				<div class="rt-button">
-					<a class="btn button-3" href="<?php echo esc_url( home_url() ) ?>">
-						<?php foodymat_html( foodymat_option( 'rt_error_button_text' ), 'allow_title' ); ?><i class="icon-rt-right-arrow"></i>
+					<a class="btn button-2" href="<?php echo esc_url( home_url() ) ?>">
+						<?php foodymat_html( foodymat_option( 'rt_error_button_text' ), 'allow_title' ); ?>
 					</a>
 				</div>
 

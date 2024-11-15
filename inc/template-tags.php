@@ -298,7 +298,7 @@ if ( ! function_exists( 'foodymat_menu_icons_group' ) ) {
 
 				<?php if ( $has_button ) : ?>
 					<li class="rt-button">
-						<a class="btn button-6" href="<?php echo esc_url( $args['button_link'] ) ?>" aria-label="button link">
+						<a class="btn button-2" href="<?php echo esc_url( $args['button_link'] ) ?>" aria-label="button link">
 							<i class="icon-rt-calendar"></i>
 							<?php echo esc_html( $args['button_label'] ); ?>
 						</a>
@@ -1143,34 +1143,38 @@ if ( ! function_exists( 'foodymat_entry_profile' ) ) {
 					</div>
 					<div class="profile-content">
 						<div class="profile-author-info">
-							<h3 class="profile-title"><?php the_author_posts_link();?></h3>
-							<div class="profile-info">
-								<span class="profile-designation">
-									<?php if ( !empty ( $prof_designation ) ) {
-										echo esc_html( $prof_designation );
-									} else {
-										$user_info = get_userdata( $author );
-										echo esc_html ( implode( ', ', $user_info->roles ) );	} ?>
-								</span>
-								<?php if ( $prof_phone ) { ?>
-									<span class="profile-phone"><?php echo esc_html__( 'Ph: ', 'foodymat' ) ?><?php echo esc_html( $prof_phone );?></span>
-								<?php } ?>
+							<div>
+								<h3 class="profile-title"><?php the_author_posts_link();?></h3>
+								<div class="profile-info">
+									<span class="profile-designation">
+										<?php if ( !empty ( $prof_designation ) ) {
+											echo esc_html( $prof_designation );
+										} else {
+											$user_info = get_userdata( $author );
+											echo esc_html ( implode( ', ', $user_info->roles ) );	} ?>
+									</span>
+									<?php if ( $prof_phone ) { ?>
+										<span class="profile-phone"><?php echo esc_html__( 'Ph: ', 'foodymat' ) ?><?php echo esc_html( $prof_phone );?></span>
+									<?php } ?>
+								</div>
 							</div>
+
+							<ul class="profile-author-social">
+								<?php if ( ! empty( $prof_fb ) ){ ?><li><a href="<?php echo esc_attr( $prof_fb ); ?>"><i class="icon-rt-facebook"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_tw ) ){ ?><li><a href="<?php echo esc_attr( $prof_tw ); ?>"><i class="icon-rt-x-twitter"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_lk ) ){ ?><li><a href="<?php echo esc_attr( $prof_lk ); ?>"><i class="icon-rt-linkedin"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_vim ) ){ ?><li><a href="<?php echo esc_attr( $prof_vim ); ?>"><i class="icon-rt-vine"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_you ) ){ ?><li><a href="<?php echo esc_attr( $prof_you ); ?>"><i class="icon-rt-youtube-2"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_ins ) ){ ?><li><a href="<?php echo esc_attr( $prof_ins ); ?>"><i class="icon-rt-instagram"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_pin ) ){ ?><li><a href="<?php echo esc_attr( $prof_pin ); ?>"><i class="icon-rt-pinterest"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_wht ) ){ ?><li><a href="<?php echo esc_attr( $prof_wht ); ?>"><i class="icon-rt-whatsapp"></i></a></li><?php } ?>
+							</ul>
 						</div>
 
 						<?php if ( $prof_description ) { ?>
 							<div class="author-bio"><?php echo esc_html( $prof_description );?></div>
 						<?php } ?>
-						<ul class="profile-author-social">
-							<?php if ( ! empty( $prof_fb ) ){ ?><li><a href="<?php echo esc_attr( $prof_fb ); ?>"><i class="icon-rt-facebook"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_tw ) ){ ?><li><a href="<?php echo esc_attr( $prof_tw ); ?>"><i class="icon-rt-x-twitter"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_lk ) ){ ?><li><a href="<?php echo esc_attr( $prof_lk ); ?>"><i class="icon-rt-linkedin"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_vim ) ){ ?><li><a href="<?php echo esc_attr( $prof_vim ); ?>"><i class="icon-rt-vine"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_you ) ){ ?><li><a href="<?php echo esc_attr( $prof_you ); ?>"><i class="icon-rt-youtube-2"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_ins ) ){ ?><li><a href="<?php echo esc_attr( $prof_ins ); ?>"><i class="icon-rt-instagram"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_pin ) ){ ?><li><a href="<?php echo esc_attr( $prof_pin ); ?>"><i class="icon-rt-pinterest"></i></a></li><?php } ?>
-							<?php if ( ! empty( $prof_wht ) ){ ?><li><a href="<?php echo esc_attr( $prof_wht ); ?>"><i class="icon-rt-whatsapp"></i></a></li><?php } ?>
-						</ul>
+
 					</div>
 				</div>
 			<?php } ?>
@@ -1238,9 +1242,10 @@ if ( ! function_exists( 'foodymat_sidebar' ) ) {
 
 		$sidebar_cols = Fns::sidebar_columns();
 		?>
-		<aside id="sidebar" class="foodymat-widget-area sidebar-sticky <?php echo esc_attr( $sidebar_cols ) ?>"
-			   role="complementary">
-			<?php dynamic_sidebar( $sidebar_id ); ?>
+		<aside id="sidebar" class="foodymat-widget-area sidebar-sticky <?php echo esc_attr( $sidebar_cols ) ?>" role="complementary">
+			<div class="sidebar-section-wrap">
+				<?php dynamic_sidebar( $sidebar_id ); ?>
+			</div>
 		</aside><!-- #sidebar -->
 		<?php
 	}
@@ -1478,7 +1483,7 @@ function foodymat_comments_cbf( $comment, $args, $depth ) {
 					// Display author name
 					printf( __( '<cite class="fn">%s</cite>', 'foodymat' ), get_comment_author_link() ); ?>
 
-					<div class="comment-meta commentmetadata">
+					<span class="comment-meta commentmetadata">
 						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 							/* translators: 1: date, 2: time */
 							printf(
@@ -1488,7 +1493,7 @@ function foodymat_comments_cbf( $comment, $args, $depth ) {
 							); ?>
 						</a><?php
 						edit_comment_link( __( 'Edit', 'foodymat' ), '  ', '' ); ?>
-					</div><!-- .comment-meta -->
+					</span><!-- .comment-meta -->
 					<div class="comment-details">
 
 						<div class="comment-text"><?php comment_text(); ?></div><!-- .comment-text -->

@@ -1,14 +1,16 @@
 .comments-area {
 	margin-top: 50px;
+	border: 1px solid $border_color;
+	border-radius: 5px;
+	padding: 40px;
 
 	.comment-list-wrapper {
-		margin-top: 50px;
 		margin-bottom: 45px;
 	}
 
 	.comments-title {
 		font-size: 32px;
-		margin-bottom: 20px;
+		margin-bottom: 26px;
 	}
 
 	dd {
@@ -35,11 +37,13 @@
 
 .comment-author {
 	display: flex;
-	gap: 24px;
+	gap: 15px;
 	align-items: flex-start;
 
 	.vcard {
-		flex: 0 0 100px;
+		//flex: 0 0 100px;
+		width: 60px;
+		height: 60px;
 		@media (max-width: 767px) {
 			flex: 0 0 50px;
 
@@ -47,18 +51,20 @@
 	}
 
 	.vcard img {
-		border-radius: 8px;
+		border-radius: 50%;
 	}
 
 	.author-info {
 		margin-top: -4px;
-		flex: auto;
+		flex: 1;
 	}
 
 	.author-info cite {
-		font-size: 18px;
-		font-weight: 700;
+		font-size: 20px;
+		font-weight: 600;
 		font-style: normal;
+		margin-right: 10px;
+		line-height: 22px;
 	}
 
 	.author-info cite a {
@@ -69,7 +75,9 @@
 	}
 
 	.comment-meta {
-		font-size: 15px;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 24px;
 		margin-bottom: 10px;
 		a {
 			color: $meta_color;
@@ -126,7 +134,7 @@
 	}
 
 	.comment-body {
-		margin-bottom: 35px;
+		margin-bottom: 40px;
 	}
 
 	> li ol,

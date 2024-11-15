@@ -18,9 +18,10 @@ $effect = foodymat_option('rt_animation_effect');
 $delay = foodymat_option('delay');
 $duration = foodymat_option('duration');
 ?>
+
 <article data-post-id="<?php the_ID(); ?>" <?php post_class( foodymat_post_class() ); ?>>
 	<div class="article-inner-wrapper <?php echo esc_attr($wow . ' ' . $effect); ?>" data-wow-delay="<?php echo esc_attr($delay); ?>ms" data-wow-duration="<?php echo esc_attr($duration); ?>ms">
-		<?php foodymat_post_thumbnail('foodymat-size6'); ?>
+		<?php foodymat_post_thumbnail('foodymat-size7'); ?>
 		<div class="entry-wrapper">
 			<header class="entry-header">
 				<?php foodymat_separate_meta( 'title-above-meta' );

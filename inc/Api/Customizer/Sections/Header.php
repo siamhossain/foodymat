@@ -46,7 +46,7 @@ class Header extends Customizer {
 				'label'     => __( 'Choose Layout', 'foodymat' ),
 				'default'   => '1',
 				'edit-link' => '.site-branding',
-				'choices'   => Fns::image_placeholder( 'header', 2 )
+				'choices'   => Fns::image_placeholder( 'header', 3 )
 			],
 
 			'rt_menu_alignment' => [

@@ -33,8 +33,7 @@
 }
 
 @media (min-width: 1200px) {
-	.rt-container-lg,
-	.container {
+	.rt-container-lg {
 		max-width: $container_width_lg;
 	}
 }

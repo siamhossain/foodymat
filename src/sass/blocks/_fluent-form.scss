@@ -9,8 +9,22 @@ Fluent form style
 		}
 	}
 }
+
 @media (min-width: 768px) {
 	.frm-fluent-form .ff-t-container {
 		align-items: self-start;
 	}
 }
+
+.rt-contact-form {
+	@media (min-width: 768px) {
+		.frm-fluent-form .rt-contact-form {
+			gap: 24px;
+		}
+	}
+
+	.ff-el-group.ff_submit_btn_wrapper {
+		margin-bottom: 0 !important;
+	}
+}
+

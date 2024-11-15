@@ -128,6 +128,32 @@ button {
 }
 // button 2
 .rt-button .button-2 {
+	color: $primary_color;
+	border: 1px solid $primary_color;
+	position: relative;
+	z-index: 0;
+	&::before {
+		content: "";
+		position: absolute;
+		top: -90%;
+		left: 0;
+		transform: translatey(-7.3125rem);
+		width: 11.125rem;
+		height: 7.3125rem;
+		background-image: url(../images/button-shapes.svg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		transition: all .6s ease-in-out;
+		z-index: -1;
+	}
+	&:hover {
+		color: #fff;
+		&::before {
+			transform: translatey(.625rem);
+		}
+	}
+}
+.rt-button .button-2X {
 	color: $button_text_color;
 	i {
 		color: $button_text_color;
@@ -234,31 +260,8 @@ button {
 }
 
 //button 6
-.rt-button .button-6 {
-	color: $primary_color;
-	border: 1px solid $primary_color;
-	position: relative;
-	z-index: 0;
-	&::before {
-		content: "";
-		position: absolute;
-		top: -90%;
-		left: 0;
-		transform: translatey(-7.3125rem);
-		width: 11.125rem;
-		height: 7.3125rem;
-		background-image: url(../images/button-shapes.svg);
-		background-size: cover;
-		background-repeat: no-repeat;
-		transition: all .6s ease-in-out;
-		z-index: -1;
-	}
-	&:hover {
-		color: #fff;
-		&::before {
-			transform: translatey(.625rem);
-		}
-	}
-}
+//.rt-button .button-6 {
+//
+//}
 
 

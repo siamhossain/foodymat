@@ -17,6 +17,8 @@
 			font-weight: 500;
 			color: $body_color;
 			margin-bottom: 10px;
+			display: flex;
+			align-items: baseline;
 			&:last-child {
 				margin-bottom: 0 !important;
 			}
@@ -33,6 +35,10 @@
 				&:hover {
 					color: $primary_color;
 				}
+			}
+			svg {
+				width: 18px;
+				height: 18px;
 			}
 		}
 	}
