@@ -74,7 +74,7 @@ class Fns {
 			'facebook'      => array(
 				'label' => esc_html__( 'Facebook', 'foodymat' ),
 				'type'  => 'text',
-				'icon'  => 'icon-rt-facebook',
+				'icon'  => 'icon-facebook',
 			),
 			'twitter'       => array(
 				'label' => esc_html__( 'Twitter', 'foodymat' ),
@@ -84,27 +84,27 @@ class Fns {
 			'linkedin'      => array(
 				'label' => esc_html__( 'Linkedin', 'foodymat' ),
 				'type'  => 'text',
-				'icon'  => 'icon-rt-linkedin',
+				'icon'  => 'icon-linkedin',
 			),
 			'skype'         => array(
 				'label' => esc_html__( 'Skype', 'foodymat' ),
 				'type'  => 'text',
-				'icon'  => 'icon-rt-skype',
+				'icon'  => 'icon-skype',
 			),
 			'youtube'       => array(
 				'label' => esc_html__( 'Youtube', 'foodymat' ),
 				'type'  => 'text',
-				'icon'  => 'icon-rt-youtube',
+				'icon'  => 'icon-youtube',
 			),
 			'pinterest'     => array(
 				'label' => esc_html__( 'Pinterest', 'foodymat' ),
 				'type'  => 'text',
-				'icon'  => 'icon-rt-pinterest',
+				'icon'  => 'icon-pinterest',
 			),
 			'instagram'     => array(
 				'label' => esc_html__( 'Instagram', 'foodymat' ),
 				'type'  => 'text',
-				'icon'  => 'icon-rt-instagram',
+				'icon'  => 'icon-instagram',
 			),
 		) );
 

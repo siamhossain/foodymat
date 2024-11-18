@@ -1,11 +1,17 @@
 .comments-area {
-	margin-top: 50px;
-	border: 1px solid $border_color;
-	border-radius: 5px;
-	padding: 40px;
+	//margin-top: 50px;
+	//border: 1px solid $border_color;
+	//border-radius: 5px;
+	//padding: 40px;
 
 	.comment-list-wrapper {
+		margin-top: 50px;
+		border: 1px solid $border_color;
+		border-radius: 5px;
+		padding:  40px 40px 0 40px;
+
 		margin-bottom: 45px;
+
 	}
 
 	.comments-title {
@@ -57,6 +63,15 @@
 	.author-info {
 		margin-top: -4px;
 		flex: 1;
+
+		.comment-details {
+			.comment-text {
+				padding-right: 64px;
+				p {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 
 	.author-info cite {
@@ -91,10 +106,11 @@
 
 .comment-reply-link {
 	padding: 0 8px;
-	height: 30px;
+	width: 35px;
+	height: 35px;
 	color: $meta_color;
 	border: 1px solid $border_color;
-	border-radius: 4px;
+	border-radius: 50px;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -110,7 +126,9 @@
 	}
 
 	svg {
-		fill: $title_color;
+		path {
+			@include transition_default();
+		}
 	}
 
 	&:hover {
@@ -119,8 +137,11 @@
 		color: $button_color;
 
 		svg {
-			fill: $button_color;
+			path {
+				fill: $white_color;
+			}
 		}
+
 	}
 }
 #cancel-comment-reply-link {
@@ -144,7 +165,7 @@
 	}
 
 	li ol.children {
-		padding-left: 30px;
+		padding-left: 88px;
 		margin: 0;
 		list-style: none;
 		margin-top: 25px;
@@ -159,6 +180,10 @@
 }
 
 .comment-respond {
+	margin-top: 50px;
+	border: 1px solid $border_color;
+	border-radius: 5px;
+	padding: 40px;
 	.comment-reply-title {
 		font-size: 32px;
 	}
@@ -218,20 +243,22 @@
 
 	input[type=submit] {
 		width: auto;
-		background: $tertiary_color;
-		color: $button_text_color;
-		border: none;
-		padding: 16px 26px;
+		background: $primary_color;
+		color: $white_color;
+		padding: 13px 16px;
 		border-radius: 6px;
 		cursor: pointer;
-		font-size: $base_fs;
-		font-weight: 700;
+		font-size: 15px;
+		font-weight: 500;
 		letter-spacing: 0.5px;
-		@include transition_default();
+		line-height: 19.2px;
+		border: 1px solid transparent;
+ 		@include transition_default();
 
 		&:hover {
-			background: $primary_color;
-			color: $button_color;
+			background: transparent;
+			color: $primary_color;
+			border: 1px solid $primary_color;
 		}
 	}
 

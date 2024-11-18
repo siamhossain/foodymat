@@ -74,6 +74,7 @@ $dropdown_top_bottom_margin: 10px;
 	}
 	i {
 		color: $primary_color;
+		font-size: 45px;
 	}
 	.phone-text {
 		p {
@@ -99,7 +100,7 @@ $dropdown_top_bottom_margin: 10px;
 			gap: 10px;
 			align-items: center;
 			i {
-				font-size: 35px;
+				font-size: 40px;
 			}
 
 			.phone-text {
@@ -144,7 +145,7 @@ $dropdown_top_bottom_margin: 10px;
 		z-index: 0;
 		overflow: hidden;
 		i {
-			font-size: 16px;
+			font-size: 19px;
 			@include transition_default();
 		}
 		&::before {

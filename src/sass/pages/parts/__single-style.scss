@@ -225,3 +225,40 @@
 		}
 	}
 }
+
+//wp-block-list
+.single-content .foodymat-post-card .wp-block-column {
+	ul {
+		padding-left: 0px;
+		margin: 0;
+		li {
+			list-style: none;
+			position: relative;
+			padding-left: 28px;
+			margin-bottom: 8px;
+			&::before {
+				content: "\e837";
+				position: absolute;
+				font-family: rt-fontello;
+				font-size: 18px;
+				left: 0;
+				top: 0;
+				color: var(--rt-primary-color);
+			}
+		}
+	}
+}
+
+//quote
+.wp-block-quote {
+	position: relative;
+	&::before {
+		content: "\e84b";
+		font-family: rt-fontello;
+		font-size: 40px;
+		position: absolute;
+		color: $primary_color;
+		left: 54px;
+		top: 17%;
+	}
+}

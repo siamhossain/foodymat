@@ -38,7 +38,7 @@ $_fullwidth = Opt::$header_width == 'full' ? '-fluid' : '';
 			<div class="phone-with-menu-icon-wrapper d-flex align-items-center">
 				<?php if (foodymat_option( 'rt_header_phone' ) && foodymat_option( 'rt_phone' )) { ?>
 					<div class="phone-item d-flex align-items-center gap-10">
-						<i class="icon-rt-phone-2"></i>
+						<i class="icon-delivary"></i>
 						<div class="phone-text">
 							<p class="phone-label mb-0">call and Order in</p>
 							<a href="tel:<?php echo esc_attr( foodymat_option( 'rt_phone' ) );?>"><?php foodymat_html( foodymat_option( 'rt_phone' ) , false );?></a>

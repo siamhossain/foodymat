@@ -88,19 +88,19 @@
 	}
 
 	ul li a:hover {
-		@extend .tertiaryColor;
+		@extend .primaryColor;
 		svg {
 			fill: $tertiary_color;
 		}
 	}
 
 	ul.menu > li > a:hover {
-		@extend .tertiaryColor;
+		@extend .primaryColor;
 	}
 
 	ul.menu li.current-menu-item > a,
 	ul.menu li.current > a {
-		@extend .tertiaryColor;
+		@extend .primaryColor;
 	}
 
 	/* #. Submenu */
@@ -175,7 +175,7 @@
 	}
 
 	ul li ul li:hover > a {
-		color: $tertiary_color;
+		color: $primary_color;
 	}
 
 	/*Menu hover effect*/
@@ -184,7 +184,7 @@
 	}
 
 	ul.menu li ul.dropdown-menu li a:hover {
-		color: $tertiary_color;
+		color: $primary_color;
 	}
 
 	ul.menu li ul.dropdown-menu li a:before {
