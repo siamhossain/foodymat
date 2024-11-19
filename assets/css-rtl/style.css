@@ -3759,7 +3759,7 @@ textarea {
   color: var(--rt-primary-color);
 }
 
-.primaryBG, .above-meta-style-border .separate-meta a:hover, .meta-style-dash-bg .rt-post-meta li:is(.category, .tag) a:hover, .meta-style-border .rt-post-meta ul li:is(.category, .tag) a:hover, button,
+.primaryBG, .above-meta-style-border .separate-meta a:hover, .meta-style-dash-bg .rt-post-meta li:is(.category, .tag) a:hover, .meta-style-border .rt-post-meta ul li:is(.category, .tag) a:hover, .foodymat-navigation ul.menu li ul.dropdown-menu li a:before, .foodymat-navigation ul li ul li > a:before, button,
 input[type=button],
 input[type=reset],
 input[type=submit], button:hover,
@@ -3785,7 +3785,7 @@ input[type=submit]:active {
   color: var(--rt-tertiary-color);
 }
 
-.tertiaryBG, .foodymat-navigation ul.menu li ul.dropdown-menu li a:before, .foodymat-navigation ul li ul li > a:before {
+.tertiaryBG {
   background-color: var(--rt-tertiary-color);
 }
 

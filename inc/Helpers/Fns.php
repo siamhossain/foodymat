@@ -239,6 +239,15 @@ class Fns {
 		return $columns;
 	}
 
+	public static function product_single_columns( $full_width_col = 'col-12' ) {
+		$sidebar = Opt::$sidebar === 'default' ? 'rt-single-sidebar' : Opt::$sidebar;
+		$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-xl-8';
+		if ( Opt::$layout === 'full-width' ) {
+			$columns = $full_width_col;
+		}
+		return $columns;
+	}
+
 
 	/**
 	 * Get blog colum
@@ -458,5 +467,21 @@ class Fns {
 		}
 
 		return [];
+	}
+
+	/*shop archive grid action*/
+	public static function shop_grid_page_url() {
+		global $wp;
+		$current_url = add_query_arg($wp->query_string, '&displayview=grid', home_url($wp->request));
+		return $current_url;
+	}
+	public static function shop_list_page_url() {
+		global $wp;
+		$current_url = add_query_arg($wp->query_string, '&displayview=list', home_url($wp->request));
+		return $current_url;
+	}
+
+	public static function foodymat_shop_icons_enable(  ) {
+		return foodymat_option( 'rt_header_compare' ) || foodymat_option( 'rt_header_wishlist' ) || foodymat_option( 'rt_header_add_to_cart' ) ? true:false;
 	}
 }

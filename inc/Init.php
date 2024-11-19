@@ -43,6 +43,11 @@ final class Init {
 		Plugins\ThemeJetpack::instance();
 		Modules\TgmConfig::instance();
 		Modules\AjaxSearch::instance();
+
+		if ( class_exists( 'WooCommerce' ) ) {
+			Plugins\FoodymatWcFunctions::instance();
+		}
+
 	}
 
 }

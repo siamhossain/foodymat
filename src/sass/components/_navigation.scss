@@ -155,7 +155,7 @@
 		opacity: 0;
 		visibility: hidden;
 		border-radius: 50%;
-		@extend .tertiaryBG;
+		@extend .primaryBG;
 		transform: translateY(-50%);
 		@include transition_default();
 	}
@@ -191,7 +191,7 @@
 		position: absolute;
 		z-index: 1;
 		content: "";
-		@extend .tertiaryBG;
+		@extend .primaryBG;
 		height: 0.0625rem;
 		width: 0;
 		right: 0;
