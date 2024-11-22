@@ -211,6 +211,10 @@ class Fns {
 	public static function sidebar_columns() {
 		$columns = "col-xl-4";
 
+		if ( is_shop() ) {
+			$columns = 'col-xl-3';
+		}
+
 		return $columns;
 	}
 
@@ -223,6 +227,10 @@ class Fns {
 		$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-xl-8';
 		if ( Opt::$layout === 'full-width' ) {
 			$columns = $full_width_col;
+		}
+
+		if ( is_shop() ) {
+			$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-xl-9';
 		}
 
 		return $columns;

@@ -137,20 +137,27 @@ class FoodymatWcFunctions {
 	//Shop category
 	public static function get_top_category_name(){
 		global $product;
-		$terms = wc_get_product_terms( $product->get_id(), 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) );
-		if ( empty( $terms ) ) {
+		$terms = wc_get_product_terms($product->get_id(), 'product_cat', array('orderby' => 'parent', 'order' => 'DESC'));
+
+		if (empty($terms)) {
 			return '';
 		}
-		if ( $terms[0]->parent == 0 ) {
-			$cat = $terms[0];
-		}
-		else {
-			$ancestors = get_ancestors( $terms[0]->term_id, 'product_cat', 'taxonomy' );
-			$cat_id    = end( $ancestors );
-			$cat       = get_term( $cat_id, 'product_cat' );
 
+		$category_links = array();
+
+		foreach ($terms as $term) {
+			if ($term->parent == 0) {
+				$cat = $term;
+			} else {
+				$ancestors = get_ancestors($term->term_id, 'product_cat', 'taxonomy');
+				$cat_id = end($ancestors);
+				$cat = get_term($cat_id, 'product_cat');
+			}
+
+			$category_links[] = '<a href="' . esc_url(get_term_link($cat->term_id, 'product_cat')) . '">' . esc_html($cat->name) . '</a>';
 		}
-		return '<div class="shop-cat"><a href="' . esc_url( get_term_link( $cat->term_id, 'product_cat' ) ) . '">' . $cat->name . '</a></div>';
+
+		return implode(' ', $category_links);
 	}
 
 	/*Shop Get sale percentage*/
@@ -262,7 +269,7 @@ class FoodymatWcFunctions {
 
 		if ( $in_cart ) {
 			if ( $text ) {
-				$html .= '<i class="icon-rt-check"></i><span>Already Added Cart</span>';
+				$html .= '<i class="icon-rt-check"></i><span>Added to Cart</span>';
 			}
 		} else {
 			if ( $icon ) {
@@ -275,7 +282,7 @@ class FoodymatWcFunctions {
 		}
 
 		if ( $in_cart ) {
-			echo sprintf( '<a rel="nofollow" title="%s" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s">' . $html . '</a>',
+			echo sprintf( '<a rel="nofollow" class="btn button-2" title="%s" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s">' . $html . '</a>',
 				esc_attr( $product->add_to_cart_text() ),
 				esc_url( wc_get_cart_url() ),
 				esc_attr( isset( $quantity ) ? $quantity : 1 ),
@@ -283,7 +290,7 @@ class FoodymatWcFunctions {
 				esc_attr( $product->get_sku() )
 			);
 		} else {
-			echo sprintf( '<a rel="nofollow" title="%s" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">' . $html . '</a>',
+			echo sprintf( '<a rel="nofollow" class="btn button-2" title="%s" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">' . $html . '</a>',
 				esc_attr( $product->add_to_cart_text() ),
 				esc_url( $product->add_to_cart_url() ),
 				esc_attr( isset( $quantity ) ? $quantity : 1 ),

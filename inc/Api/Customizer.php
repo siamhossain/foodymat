@@ -75,6 +75,7 @@ class Customizer {
 		if ( class_exists( 'WooCommerce' ) ) {
 			$classess[] = Customizer\Sections\LayoutsWooSingle::class;
 			$classess[] = Customizer\Sections\LayoutsWooArchive::class;
+			$classess[] = Customizer\Sections\WooArchiveSettings::class;
 		}
 
 

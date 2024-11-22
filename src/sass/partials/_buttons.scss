@@ -109,8 +109,8 @@ button {
 		top: -90%;
 		left: -5px;
 		transform: translatey(-7.3125rem);
-		width: 11.125rem;
-		height: 7.3125rem;
+		width: 11.625rem;
+		height: 8.3125rem;
 		background-image: url(../images/button-shape-white.svg);
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -138,8 +138,8 @@ button {
 		top: -90%;
 		left: 0;
 		transform: translatey(-7.3125rem);
-		width: 11.125rem;
-		height: 7.3125rem;
+		width: 11.625rem;
+		height: 8.3125rem;
 		background-image: url(../images/button-shapes.svg);
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -149,7 +149,7 @@ button {
 	&:hover {
 		color: #fff;
 		&::before {
-			transform: translatey(.625rem);
+			transform: translatey(.025rem);
 		}
 	}
 }
