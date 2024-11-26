@@ -124,6 +124,12 @@ $breakpoint-counter: 0;
 		max-width: percentage(calc(calc($i / $columns)));
 		flex: 0 0 percentage(calc($i / $columns));
 	}
+	.checkout.woocommerce-checkout {
+		.col-#{$i} {
+			max-width: 100%;
+			flex: unset	;
+		}
+	}
 }
 
 @each $breakpoint, $val in $breakpoints {

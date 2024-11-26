@@ -232,6 +232,9 @@ class Fns {
 		if ( is_shop() ) {
 			$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-xl-9';
 		}
+		if ( is_cart() ) {
+//			$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-xl-12';
+		}
 
 		return $columns;
 	}

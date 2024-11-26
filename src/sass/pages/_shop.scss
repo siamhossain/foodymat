@@ -89,8 +89,8 @@
 		font-size: 14px;
 		margin: 0 0 3px;
 		&:before {
-			content: "SSSSS";
-			color: $body_color;
+			//content: "SSSSS";
+			//color: $body_color;
 		}
 		span:before {
 			color: $tertiary_color;
@@ -448,8 +448,8 @@
 		}
 		.wc-block-cart-items__header {
 			th {
-				background-color: $gray20 !important;
-				color: $title_color;
+				background-color: $black_color !important;
+				color: $white_color;
 				font-size: 15px;
 				padding: 16px;
 			}
