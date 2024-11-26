@@ -14990,6 +14990,9 @@ body .home7-hero-social .rt-social-icon {
   border: 1px solid var(--rt-border-color);
   border-radius: 10px;
 }
+.product-item .img-wrap {
+  position: relative;
+}
 .product-item .img-wrap .item-img {
   line-height: 0;
   border-radius: 10px 10px 0 0;
@@ -14999,6 +15002,40 @@ body .home7-hero-social .rt-social-icon {
   width: 100%;
   height: 100%;
   transition: all 520ms ease;
+}
+.product-item .img-wrap .discount-flag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 7px 30px 7px 15px;
+  background-color: var(--rt-primary-color);
+  height: 30px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  z-index: 1;
+  -webkit-clip-path: polygon(83.097% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 98.812% 98.824%, 97.72% 95.56%, 96.723% 90.609%, 95.823% 84.368%, 95.02% 77.237%, 94.313% 69.614%, 93.704% 61.898%, 93.192% 54.488%, 92.777% 47.783%, 92.46% 42.182%, 92.46% 42.182%, 91.734% 30.75%, 90.937% 21.597%, 90.08% 14.468%, 89.17% 9.111%, 88.216% 5.273%, 87.227% 2.7%, 86.212% 1.139%, 85.179% 0.337%, 84.138% 0.042%, 83.097% 0%);
+          clip-path: polygon(83.097% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 98.812% 98.824%, 97.72% 95.56%, 96.723% 90.609%, 95.823% 84.368%, 95.02% 77.237%, 94.313% 69.614%, 93.704% 61.898%, 93.192% 54.488%, 92.777% 47.783%, 92.46% 42.182%, 92.46% 42.182%, 91.734% 30.75%, 90.937% 21.597%, 90.08% 14.468%, 89.17% 9.111%, 88.216% 5.273%, 87.227% 2.7%, 86.212% 1.139%, 85.179% 0.337%, 84.138% 0.042%, 83.097% 0%);
+}
+.product-item .img-wrap .discount-flag span {
+  color: #FFFFFF;
+}
+.product-item .img-wrap .discount-flag span .price-percent {
+  font-weight: 700;
+}
+.product-item .img-wrap .discount-flag:before {
+  position: absolute;
+  right: -38px;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.product-item .product-rating i {
+  color: #E9A800;
+  margin-right: 5px;
+}
+.product-item .product-rating .average-rating {
+  color: var(--rt-title-color);
 }
 .product-item .item-content {
   position: relative;
@@ -15049,27 +15086,6 @@ body .home7-hero-social .rt-social-icon {
 .product-item .item-content .product-rating i {
   color: #E9A800;
 }
-.product-item .item-content .discount-flag {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background-color: var(--rt-primary-color);
-  color: #FFFFFF;
-  padding: 7px 50px;
-  width: 250px;
-  height: 40px;
-  border-radius: 0 10px 0 0;
-}
-@media (min-width: 1024px) {
-  .product-item .item-content .discount-flag {
-    position: absolute;
-    top: 45px;
-    right: -55px;
-    left: auto;
-    transform: rotate(45deg);
-    border-radius: 0;
-  }
-}
 .product-item .item-content .excerpt {
   font-weight: 500;
   font-size: 15px;
@@ -15091,20 +15107,20 @@ body .home7-hero-social .rt-social-icon {
     gap: 25px;
   }
 }
-.product-item .item-content .price-order-btn-wrap .item-price {
+.product-item .item-content .item-price {
   position: relative;
   font-weight: 600;
   font-size: 24px;
   line-height: 30px;
   color: var(--rt-title-color);
 }
-.product-item .item-content .price-order-btn-wrap .item-price .original-price {
+.product-item .item-content .item-price .original-price {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #A0A0A0;
 }
-.product-item .item-content .price-order-btn-wrap .item-price .sale-price {
+.product-item .item-content .item-price .sale-price {
   font-size: 30px;
   line-height: 30px;
   font-weight: 700;
@@ -15120,37 +15136,7 @@ body .home7-hero-social .rt-social-icon {
 .product-item:hover .img-wrap .item-img img {
   transform: scale(1.15);
 }
-.product-item-style1 .img-wrap {
-  position: relative;
-}
-.product-item-style1 .img-wrap .discount-flag {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 7px 30px 7px 15px;
-  background-color: var(--rt-primary-color);
-  height: 30px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  z-index: 1;
-  -webkit-clip-path: polygon(83.097% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 98.812% 98.824%, 97.72% 95.56%, 96.723% 90.609%, 95.823% 84.368%, 95.02% 77.237%, 94.313% 69.614%, 93.704% 61.898%, 93.192% 54.488%, 92.777% 47.783%, 92.46% 42.182%, 92.46% 42.182%, 91.734% 30.75%, 90.937% 21.597%, 90.08% 14.468%, 89.17% 9.111%, 88.216% 5.273%, 87.227% 2.7%, 86.212% 1.139%, 85.179% 0.337%, 84.138% 0.042%, 83.097% 0%);
-          clip-path: polygon(83.097% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 98.812% 98.824%, 97.72% 95.56%, 96.723% 90.609%, 95.823% 84.368%, 95.02% 77.237%, 94.313% 69.614%, 93.704% 61.898%, 93.192% 54.488%, 92.777% 47.783%, 92.46% 42.182%, 92.46% 42.182%, 91.734% 30.75%, 90.937% 21.597%, 90.08% 14.468%, 89.17% 9.111%, 88.216% 5.273%, 87.227% 2.7%, 86.212% 1.139%, 85.179% 0.337%, 84.138% 0.042%, 83.097% 0%);
-}
-.product-item-style1 .img-wrap .discount-flag span {
-  color: #FFFFFF;
-}
-.product-item-style1 .img-wrap .discount-flag span .price-percent {
-  font-weight: 700;
-}
-.product-item-style1 .img-wrap .discount-flag:before {
-  position: absolute;
-  right: -38px;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
-.product-item-style1 .item-content .product-categories a {
+.product-item-style1 .item-content .product-categories a, .product-item-style3 .item-content .product-categories a, .product-item-style4 .item-content .product-categories a {
   border: none;
   background: #FFE0E1;
   color: var(--rt-primary-color);
@@ -15196,6 +15182,27 @@ body .home7-hero-social .rt-social-icon {
 }
 .product-item-style2 .item-content .item-title a {
   color: var(--rt-title-color);
+}
+.product-item-style2 .item-content .discount-flag {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--rt-primary-color);
+  color: #FFFFFF;
+  padding: 7px 50px;
+  width: 250px;
+  height: 40px;
+  border-radius: 0 10px 0 0;
+}
+@media (min-width: 1024px) {
+  .product-item-style2 .item-content .discount-flag {
+    position: absolute;
+    top: 45px;
+    right: -55px;
+    left: auto;
+    transform: rotate(45deg);
+    border-radius: 0;
+  }
 }
 .product-item-style2 .item-content .price-order-btn-wrap {
   display: flex;
@@ -15245,6 +15252,100 @@ body .home7-hero-social .rt-social-icon {
 }
 .product-item-style2 .item-content .price-order-btn-wrap .btn-wrap a {
   padding: 10px 22px;
+}
+.product-item-style3 {
+  padding: 12px 10px 24px 10px;
+}
+.product-item-style3 .img-wrap .item-img {
+  border-radius: 10px;
+}
+.product-item-style3 .item-content {
+  padding: 24px 0 0 0;
+}
+.product-item-style3 .item-content .product-categories {
+  margin-bottom: 0;
+}
+.product-item-style3 .item-content .title-price-wrap .item-title {
+  margin-bottom: 0;
+  font-size: 30px;
+  line-height: 38px;
+}
+.product-item-style3 .item-content .title-price-wrap .item-price {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+  flex: 1;
+}
+.product-item-style3 .item-content .title-price-wrap .item-price .sale-price {
+  margin-right: 0;
+}
+.product-item-style3 .item-content .product-rating {
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.product-item-style3 .item-content .btn-wrap a {
+  padding: 13px 20px;
+}
+.product-item-style4 .flag-wrap {
+  background: #F2F2F2;
+  display: flex;
+  height: 29px;
+  align-items: center;
+}
+.product-item-style4 .product-rating {
+  flex: 1;
+  margin: 0;
+}
+.product-item-style4 .discount-flag {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  padding: 7px 30px 7px 15px;
+  background-color: var(--rt-primary-color);
+  height: 30px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  z-index: 1;
+  -webkit-clip-path: polygon(83.097% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 98.812% 98.824%, 97.72% 95.56%, 96.723% 90.609%, 95.823% 84.368%, 95.02% 77.237%, 94.313% 69.614%, 93.704% 61.898%, 93.192% 54.488%, 92.777% 47.783%, 92.46% 42.182%, 92.46% 42.182%, 91.734% 30.75%, 90.937% 21.597%, 90.08% 14.468%, 89.17% 9.111%, 88.216% 5.273%, 87.227% 2.7%, 86.212% 1.139%, 85.179% 0.337%, 84.138% 0.042%, 83.097% 0%);
+          clip-path: polygon(83.097% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 100%, 98.812% 98.824%, 97.72% 95.56%, 96.723% 90.609%, 95.823% 84.368%, 95.02% 77.237%, 94.313% 69.614%, 93.704% 61.898%, 93.192% 54.488%, 92.777% 47.783%, 92.46% 42.182%, 92.46% 42.182%, 91.734% 30.75%, 90.937% 21.597%, 90.08% 14.468%, 89.17% 9.111%, 88.216% 5.273%, 87.227% 2.7%, 86.212% 1.139%, 85.179% 0.337%, 84.138% 0.042%, 83.097% 0%);
+}
+.product-item-style4 .discount-flag span {
+  color: #FFFFFF;
+}
+.product-item-style4 .discount-flag span .price-percent {
+  font-weight: 700;
+}
+.product-item-style4 .discount-flag:before {
+  position: absolute;
+  right: -38px;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.product-item-style4 .item-content {
+  padding: 20px;
+}
+.product-item-style4 .item-content .item-title {
+  margin-bottom: 0;
+}
+.product-item-style4 .item-content .product-categories a {
+  background-color: transparent;
+  padding: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--rt-title-color);
+}
+.product-item-style4 .item-content .product-categories a:hover {
+  background-color: transparent;
+  color: var(--rt-primary-color);
+}
+.product-item-style4 .item-content .price-order-btn-wrap {
+  justify-content: space-between;
 }
 
 @media (min-width: 1024px) {

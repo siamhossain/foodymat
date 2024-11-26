@@ -41,6 +41,7 @@ class Setup {
 			'foodymat-size6'  => [ 960, 960, true ],
 			'foodymat-size7'  => [ 410, 303, true ],
 			'foodymat-size8'  => [ 312, 180, true ],
+			'foodymat-size9'  => [ 404, 260, true ],
 		];
 
 		$sizes = apply_filters( 'foodymat_image_size', $sizes );
