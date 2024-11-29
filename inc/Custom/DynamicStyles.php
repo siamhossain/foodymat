@@ -35,7 +35,7 @@ class DynamicStyles {
 	private function inline_style() {
 
 		$primary_color   	= foodymat_option( 'rt_primary_color', '#E9004B' );;
-		$secondary_color 	= foodymat_option( 'rt_secondary_color', '#00473b' );
+		$secondary_color 	= foodymat_option( 'rt_secondary_color', '#000000' );
 		$tertiary_color    	= foodymat_option( 'rt_tertiary_color', '#ffb000' );
 		$body_bg_color   	= foodymat_option( 'rt_body_bg_color', '#ffffff' );
 		$body_color      	= foodymat_option( 'rt_body_color', '#333333' );;

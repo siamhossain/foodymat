@@ -408,6 +408,7 @@
 	line-height: 1;
 	opacity: 1;
 	transition: all 0.21s ease-in-out;
+	border: 1px solid $primary_color;
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt.disabled:hover,
 .woocommerce #respond input#submit.alt:hover,
@@ -421,8 +422,8 @@
 .components-button:hover,
 .wc-block-components-button:hover,
 .mini-cart-footer a.button:hover {
-	color: $white_color;
-	background-color: $secondary_color;
+	color: $primary_color;
+	background-color: transparent;
 }
 
 // Cart page
@@ -622,79 +623,3 @@ body .wc-block-checkout__sidebar .wc-block-components-totals-item {
 	}
 }
 
-
-
-//
-.isotope-test {
-	.fmp-load-more {
-		border: 1px solid $primary_color;
-		border-radius: 50px;
-		overflow: hidden;
-		button {
-			font-weight: 600;
-		}
-	}
-
-
-	.fmp-iso-filter.type-2 button {
-		//background-color: transparent;
-
-		//color: $primary_color;
-		//&::before {
-		//	background: $primary_color;
-		//}
-		//&.selected {
-		//	color: $white_color;
-		//}
-		&:hover {
-			color: $white_color !important;
-		}
-		border: 1px solid $primary_color;
-	}
-
-	.fmp-layout2 {
-		.fmp-box {
-			background: $white_color;
-			box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
-			border-radius: 10px;
-			padding: 20px;
-			align-items: center;
-			.fmp-img-wrapper {
-				@media only screen and (min-width: 768px) {
-					max-width: 200px;
-					//height: 200px;
-					//img {
-					//	height: 100%;
-					//}
-				}
-			}
-		}
-		.fmp-content {
-			.fmp-title{
-				padding: 0;
-				margin: 0 0 10px;
-				&::before {
-					display: none;
-				}
-			}
-		}
-		.fmp-btn-read-more {
-			border: 1px solid $primary_color;
-			border-radius: 50px;
-			overflow: hidden;
-			min-height: 35px;
-			line-height: 1.2;
-		}
-		.fmp-content .fmp-wc-add-to-cart-wrap {
-			margin-top: 16px;
-		}
-		.fmp-wc-add-to-cart-btn {
-			border: 1px solid $primary_color !important;
-			border-radius: 50px !important;
-			overflow: hidden;
-		}
-
-
-
-	}
-}

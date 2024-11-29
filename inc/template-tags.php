@@ -283,7 +283,7 @@ if ( ! function_exists( 'foodymat_menu_icons_group' ) ) {
 				<?php if ( $args['cart'] ) : ?>
 					<li class="rt-cart">
 						<a  class="menu-icon" href="" aria-label="cart">
-							<i class="icon-cart"></i>
+							<i class="icon-rt-cart"></i>
 						</a>
 					</li>
 				<?php endif; ?>
