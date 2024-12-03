@@ -349,7 +349,7 @@
 						$timerDays.html("0 ");
 						$timerHours.html("0 ");
 						$timerMinutes.html("0 ");
-						$timerSeconds.html("Timer Finished");
+						$timerSeconds.html("Finished");
 					} else {
 						const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
 						const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

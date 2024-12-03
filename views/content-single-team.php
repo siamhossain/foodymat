@@ -10,16 +10,17 @@
 use RT\Foodymat\Options\Opt;
 use RT\Foodymat\Helpers\Fns;
 
-$id                     = get_the_ID();
-$rt_team_info_title  	= get_post_meta( $id, 'rt_team_info_title', true );
-$rt_team_designation 	= get_post_meta( $id, 'rt_team_designation', true );
-$rt_team_phone       	= get_post_meta( $id, 'rt_team_phone', true );
-$rt_team_website     	= get_post_meta( $id, 'rt_team_website', true );
-$rt_team_email       	= get_post_meta( $id, 'rt_team_email', true );
-$rt_team_address     	= get_post_meta( $id, 'rt_team_address', true );
-$rt_team_skill_title 	= get_post_meta( $id, 'rt_team_skill_title', true );
-$rt_team_skill_info 	= get_post_meta( $id, 'rt_team_skill_info', true );
-$rt_team_skill      	= get_post_meta( $id, 'rt_team_skill', true );
+$id                     	= get_the_ID();
+$rt_team_info_title  		= get_post_meta( $id, 'rt_team_info_title', true );
+$rt_team_designation 		= get_post_meta( $id, 'rt_team_designation', true );
+$rt_team_phone       		= get_post_meta( $id, 'rt_team_phone', true );
+$rt_team_website     		= get_post_meta( $id, 'rt_team_website', true );
+$rt_team_email       		= get_post_meta( $id, 'rt_team_email', true );
+$rt_team_address     		= get_post_meta( $id, 'rt_team_address', true );
+$rt_team_skill_title 		= get_post_meta( $id, 'rt_team_skill_title', true );
+$rt_team_skill_info 		= get_post_meta( $id, 'rt_team_skill_info', true );
+$rt_team_skill      		= get_post_meta( $id, 'rt_team_skill', true );
+$rt_team_experience      	= get_post_meta( $id, 'rt_team_experience', true );
 
 $socials        		= (array) get_post_meta( $id, 'rt_team_socials', true );
 $socials_fields 		= Fns::get_team_socials();
@@ -36,7 +37,7 @@ if ( foodymat_option( 'rt_team_single_author_order' ) == 'thumb-right') {
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'team-single' ); ?>>
 	<div class="team-single-item">
 		<div class="row team-single-wrap">
-			<div class="col-lg-8 col-12 <?php echo esc_attr( $order ); ?>">
+			<div class="col-lg-6 col-12 <?php echo esc_attr( $order ); ?>">
 				<div class="team-single-content-wrap">
 					<div class="team-single-content">
 						<div class="team-heading">
@@ -46,51 +47,72 @@ if ( foodymat_option( 'rt_team_single_author_order' ) == 'thumb-right') {
 								<h2 class="entry-title"><?php the_title(); ?></h2>
 							<?php } ?>
 							<span class="designation"><?php echo esc_html( $rt_team_designation ); ?></span>
-
-							<?php if ( foodymat_option( 'rt_team_single_social' ) && ! empty( $socials ) ) { ?>
-							<ul class="team-social-social">
-								<?php foreach ( $socials as $key => $value ):
-									if(! $value){
-										continue;
-									}
-									?>
-									<li><a target="_blank" href="<?php echo esc_url( $value ); ?>"><i class="<?php echo esc_attr( $socials_fields[ $key ]['icon'] ); ?>"></i></a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-							<?php } ?>
 						</div>
-						<?php the_content(); ?>
-
-						<!-- Team info -->
 						<?php if( foodymat_option( 'rt_team_single_info' ) ) { ?>
+							<div class="excerpt">
+								<?php the_content(); ?>
+							</div>
+						<?php } ?>
 						<div class="team-info">
 							<?php if( $rt_team_info_title ) { ?><h3><?php echo esc_html( $rt_team_info_title ); ?></h3><?php } ?>
 							<ul>
-								<?php if ( ! empty( $rt_team_phone ) ) { ?>
-									<li><i class="icon-rt-phone-2"></i><span class="team-label"><?php esc_html_e( 'Call', 'foodymat' ); ?> : </span>
-										<a href="tel:<?php echo esc_html( $rt_team_phone ); ?>"><?php echo esc_html( $rt_team_phone ); ?></a>
+								<?php if ( ! empty( $rt_team_experience ) ) { ?>
+									<li>
+										<?php if (foodymat_option( 'rt_team_single_info_icon' )) { ?><i class="icon-rt-location-4"></i><?php } ?>
+										<span class="team-label"><?php esc_html_e( 'Experience', 'foodymat' ); ?> : </span>
+										<?php echo esc_html( $rt_team_experience ); ?>
 									</li>
 								<?php }
-								if ( ! empty( $rt_team_email ) ) { ?>
-									<li><i class="icon-rt-email"></i><span class="team-label"><?php esc_html_e( 'E-mail', 'foodymat' ); ?> : </span>
-										<?php echo esc_html( $rt_team_email ); ?>
-									</li>
-								<?php }
-								if ( ! empty( $rt_team_website ) ) { ?>
-									<li><i class="icon-rt-search"></i><span class="team-label"><?php esc_html_e( 'Website', 'foodymat' ); ?> : </span>
-										<?php echo esc_html( $rt_team_website ); ?>
-									</li>
-								<?php }
-								if ( ! empty( $rt_team_address ) ) { ?>
-									<li><i class="icon-rt-location-4"></i><span class="team-label"><?php esc_html_e( 'Location', 'foodymat' ); ?> : </span>
-										<?php echo esc_html( $rt_team_address ); ?>
-									</li>
-								<?php } ?>
+									if ( ! empty( $rt_team_phone ) ) { ?>
+										<li>
+											<?php if (foodymat_option( 'rt_team_single_info_icon' )) { ?> <i class="icon-rt-phone-2"></i> <?php } ?>
+											<span class="team-label"><?php esc_html_e( 'Call', 'foodymat' ); ?> : </span>
+											<a href="tel:<?php echo esc_html( $rt_team_phone ); ?>"><?php echo esc_html( $rt_team_phone ); ?></a>
+										</li>
+									<?php }
+									if ( ! empty( $rt_team_email ) ) { ?>
+										<li>
+											<?php if (foodymat_option( 'rt_team_single_info_icon' )) { ?><i class="icon-rt-email"></i> <?php } ?>
+											<span class="team-label"><?php esc_html_e( 'E-mail', 'foodymat' ); ?> : </span>
+											<?php echo esc_html( $rt_team_email ); ?>
+										</li>
+									<?php }
+									if ( ! empty( $rt_team_website ) ) { ?>
+										<li>
+											<?php if (foodymat_option( 'rt_team_single_info_icon' )) { ?> <i class="icon-rt-search"></i> <?php } ?>
+											<span class="team-label"><?php esc_html_e( 'Website', 'foodymat' ); ?> : </span>
+											<?php echo esc_html( $rt_team_website ); ?>
+										</li>
+									<?php }
+									if ( ! empty( $rt_team_address ) ) { ?>
+										<li>
+											<?php if (foodymat_option( 'rt_team_single_info_icon' )) { ?><i class="icon-rt-location-4"></i><?php } ?>
+											<span class="team-label"><?php esc_html_e( 'Location', 'foodymat' ); ?> : </span>
+											<?php echo esc_html( $rt_team_address ); ?>
+										</li>
+									<?php } ?>
 							</ul>
 						</div>
-						<?php } ?>
+						<!-- Team info -->
+						<div class="single-team-social-wrap">
+							<?php if ( foodymat_option( 'rt_team_single_social' ) && ! empty( $socials ) ) { ?>
+								<span class="social-title">Follow Me :</span>
+								<ul class="team-social-social">
+									<?php foreach ( $socials as $key => $value ):
+										if(! $value){
+											continue;
+										}
+										?>
+										<li><a target="_blank" href="<?php echo esc_url( $value ); ?>"><i class="<?php echo esc_attr( $socials_fields[ $key ]['icon'] ); ?>"></i></a>
+										</li>
+									<?php endforeach; ?>
+								</ul>
+
+							<?php } ?>
+						</div>
+						<!-- Team social -->
 					</div>
+
 					<?php if ( foodymat_option( 'rt_team_single_skill' ) && ! empty( $rt_team_skill ) ) { ?>
 						<div class="rt-skill-wrap progress-appear">
 							<div class="rt-skills">
@@ -128,9 +150,9 @@ if ( foodymat_option( 'rt_team_single_author_order' ) == 'thumb-right') {
 					<?php } ?>
 				</div>
 			</div>
-			<div class="col-lg-4 col-12">
+			<div class="col-lg-6 col-12">
 				<div class="team-single-image <?php foodymat_html( foodymat_option( 'rt_team_single_author' ), 'allow_title'); ?> sidebar-sticky">
-					<?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'full' ); } ?>
+					<?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'foodymat-size10' ); } ?>
 				</div>
 			</div>
 		</div>

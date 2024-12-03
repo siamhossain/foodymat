@@ -181,10 +181,16 @@ class Team extends Customizer {
 				'default' => 0
 			],
 
+			'rt_team_single_info_icon' => [
+				'type'    => 'switch',
+				'label'   => __( 'Team Single info icon visibility', 'foodymat' ),
+				'default' => 1
+			],
+
 			'rt_team_related_title' => [
 				'type'    => 'text',
 				'label'   => __( 'Team Related Title', 'foodymat' ),
-				'default' => __( 'Related Team', 'foodymat' ),
+				'default' => __( 'Related Chefs', 'foodymat' ),
 				'condition' => [ 'rt_team_related' ]
 			],
 

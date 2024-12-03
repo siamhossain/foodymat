@@ -15,7 +15,8 @@
 		}
 		&.active {
 			a {
-				background-color: $tertiary_color;
+				background-color: $primary_color;
+				color: $white_color;
 			}
 		}
 	}
