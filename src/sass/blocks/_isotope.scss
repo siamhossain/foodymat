@@ -95,8 +95,7 @@
 				left: 50%;
 				transform: translateX(-50%);
 				top: unset;
-				bottom: -24px;
-				transition: left 0.3s, width 0.3s;
+				bottom: -23px;
 			}
 		}
 	}
@@ -107,6 +106,10 @@
 				color: $primary_color !important;
 			}
 		}
+	}
+
+	.type-2 {
+		overflow-x: clip;
 	}
 
 }

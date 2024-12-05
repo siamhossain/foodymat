@@ -90,7 +90,7 @@
 	ul li a:hover {
 		@extend .primaryColor;
 		svg {
-			fill: $tertiary_color;
+			fill: $primary_color;
 		}
 	}
 

@@ -206,7 +206,9 @@
 						border-radius: 6px;
 						font-size: 14px;
 						padding: 5px 8px;
-						//overflow: visible !important;
+						opacity: 0;
+						visibility: hidden;
+						transform: translateX(20px);
 						&:hover {
 							background-color: $white_color;
 							color: $primary_color;
@@ -219,7 +221,6 @@
 					}
 				}
 				.shop-cat {
-
 					margin-bottom: 12px;
 					line-height: 15px;
 					a {
@@ -230,7 +231,8 @@
 						padding: 3px 10px;
 						border-radius: 30px;
 						&:hover {
-							color: $primary_color;
+							background-color: $primary_color;
+							color: $white_color;
 						}
 					}
 				}
@@ -259,10 +261,22 @@
 						}
 					}
 					.rt-shop-meta {
-						//opacity: 1;
-						//transform: translateY(-10px);
-						transition: all .3s cubic-bezier(.08,.27,.04,1.11);
-						//visibility: visible;
+						a {
+							opacity: 1;
+							transform: translateX(0);
+							transition: all .3s cubic-bezier(.08,.27,.04,1.11);
+							visibility: visible;
+							&:first-child {
+								transition-delay: 0.3s;
+							}
+							&:nth-child(2) {
+								transition-delay: 0.4s;
+							}
+							&:last-child {
+								transition-delay: 0.5s;
+							}
+						}
+
 					}
 				}
 			}
@@ -400,7 +414,6 @@
 .mini-cart-footer a.button {
 	background: $primary_color;
 	color: $white_color;
-	border-radius: 8px;
 	font-size: 18px;
 	font-weight: 500;
 	padding: 15px 28px;
@@ -409,6 +422,7 @@
 	opacity: 1;
 	transition: all 0.21s ease-in-out;
 	border: 1px solid $primary_color;
+	//width: 100%;
 }
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt.disabled:hover,
 .woocommerce #respond input#submit.alt:hover,
@@ -497,8 +511,11 @@
 	}
 	.wc-block-components-sidebar {
 		.wp-block-woocommerce-cart-order-summary-block {
-			background-color: $gray20;
 			padding: 30px;
+			border-radius: 10px 10px 0 0;
+			background-color: $white_color;
+			border: 1px solid #EEEEEE;
+			box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
 			.wc-block-cart__totals-title {
 				color: $title_color;
 				font-size: 15px;
@@ -620,6 +637,13 @@ body .wc-block-checkout__sidebar .wc-block-components-totals-item {
 			background-color: transparent;
 			color: inherit;
 		}
+	}
+}
+
+//rtsb font
+.rtsb-action-buttons {
+	[class^="icon-"]:before, [class*=" icon-"]:before {
+		//font-family: "rtsb-font" !important;
 	}
 }
 

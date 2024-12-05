@@ -1,0 +1,22 @@
+/* Reviews (2) */
+
+position: absolute;
+width: 96px;
+height: 13px;
+left: 435px;
+top: 941px;
+
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+color: #979797;
+
