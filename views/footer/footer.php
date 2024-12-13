@@ -14,7 +14,7 @@ $copyright_center = foodymat_option('rt_social_footer') ? 'justify-content-betwe
 <?php if ( is_active_sidebar( 'rt-footer-sidebar' ) ) : ?>
 	<div class="footer-widgets-wrapper">
 		<div class="footer-container <?php echo esc_attr($footer_width) ?>">
-			<div class="footer-widgets row">
+			<div class="footer-widgets row justify-content-between">
 				<?php dynamic_sidebar( 'rt-footer-sidebar' ); ?>
 			</div>
 		</div>

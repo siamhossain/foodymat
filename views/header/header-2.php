@@ -19,7 +19,7 @@ $_fullwidth = Opt::$header_width == 'full' ? '-fluid' : '';
 		<div class="row navigation-menu-wrap align-middle m-0">
 
 			<div class="site-branding">
-				<?php echo foodymat_site_logo( $logo_h1 ); ?>
+				<?php echo foodymat_site_logo( $logo_h1); ?>
 			</div><!-- .site-branding -->
 
 			<nav class="foodymat-navigation pl-15 pr-15 <?php echo esc_attr( $menu_classes ) ?>" role="navigation">

@@ -12,7 +12,7 @@ $categories = foodymat_option('wc_woo_cat') ? FoodymatWcFunctions::get_top_categ
 
 
 ?>
-<div class="rt-product-block rt-product-grid">
+<div class="rt-product-block rt-product-grid product">
 	<div class="rt-product-thumb">
 		<?php if ( foodymat_option( 'wc_shop_sale_flash' ) ) woocommerce_show_product_loop_sale_flash(); ?>
 		<a href="<?php the_permalink();?>">
@@ -69,8 +69,6 @@ $categories = foodymat_option('wc_woo_cat') ? FoodymatWcFunctions::get_top_categ
 				</div>
 			</div>
 		<?php } ?>
-
-
 	</div>
 
 </div>

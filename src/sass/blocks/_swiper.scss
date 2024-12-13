@@ -4,7 +4,7 @@
 .rt-swiper-slider {
 	overflow: hidden;
 	.swiper-wrapper {
-		align-items: center;
+		//align-items: center;
 	}
 }
 .hover-visibility {
@@ -53,8 +53,8 @@
 		color: $button_text_color;
 		@include transition_default();
 		&:hover {
-			background-color: $tertiary_color;
-			color: $button_text_color;
+			background-color: $primary_color;
+			color: $white_color;
 		}
 		&:after {
 			display: none;

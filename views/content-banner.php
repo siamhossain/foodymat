@@ -53,6 +53,9 @@ $classes = Fns::class_list( [
 if ( is_404() ) {
 	$foodymat_title = "Error Page";
 }
+if ( is_shop() ) {
+	$foodymat_title = "Shop";
+}
 elseif ( is_search() ) {
 	$foodymat_title = esc_html__( 'Search Results for : ', 'foodymat' ) . get_search_query();
 }

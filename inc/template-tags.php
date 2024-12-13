@@ -621,8 +621,15 @@ if ( ! function_exists( 'foodymat_site_logo' ) ) {
 		$has_mobile_logo = ! empty( $logo_mobile ) ? 'has-mobile-logo' : '';
 		$site_title      = $custom_title ?: get_bloginfo( 'name', 'display' );
 
-		if('light' == $mode) {
-			$logo_main = $logo_light;
+//		if('light' == $mode) {
+//			$logo_main = $logo_light;
+//		}
+
+		if ( (Opt::$has_tr_header && Opt::$header_tr_color == 'tr-header-light') || ('light' == $mode) ) {
+			$site_logo = $logo_light;
+		}
+		if ( (Opt::$has_tr_header && Opt::$header_tr_color == 'tr-header-dark') || ('dark' == $mode)) {
+			$site_logo = $logo_main;
 		}
 
 		ob_start();
@@ -632,17 +639,21 @@ if ( ! function_exists( 'foodymat_site_logo' ) ) {
 		<?php endif; ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="site logo" class="<?php echo esc_attr( $has_mobile_logo ) ?>">
 			<?php
-			if ( ! empty( $logo_main || $logo_light ) ) {
-				if ( ! empty( $logo_main ) ) {
+			if ( ! empty( $site_logo ) ) {
+				if ($mode == 'dark') {
 					echo wp_get_attachment_image(
-						$logo_main, 'full', null, [ 'class' => 'rt-site-logo dark-logo'  ]
+						$site_logo, 'full', null, [ 'class' => 'rt-site-logo dark-logo' ]
+					);
+				} else if($mode = 'light') {
+					echo wp_get_attachment_image(
+						$site_logo, 'full', null, [ 'class' => 'rt-site-logo light-logo' ]
+					);
+				} else {
+					echo wp_get_attachment_image(
+						$site_logo, 'full', null, [ 'class' => 'rt-site-logo dark-logo' ]
 					);
 				}
-				if ( ! empty( $logo_light ) ) {
-					echo wp_get_attachment_image(
-						$logo_light, 'full', null, [ 'class' => 'rt-site-logo light-logo' ]
-					);
-				}
+
 				if ( ! empty( $mobile_logo ) ) {
 					echo wp_get_attachment_image(
 						$mobile_logo, 'full', null, [ 'class' => 'rt-mobile-logo' ]
@@ -1162,14 +1173,14 @@ if ( ! function_exists( 'foodymat_entry_profile' ) ) {
 							</div>
 
 							<ul class="profile-author-social">
-								<?php if ( ! empty( $prof_fb ) ){ ?><li><a href="<?php echo esc_attr( $prof_fb ); ?>"><i class="icon-rt-facebook"></i></a></li><?php } ?>
+									<?php if ( ! empty( $prof_fb ) ){ ?><li><a href="<?php echo esc_attr( $prof_fb ); ?>"><i class="icon-facebook"></i></a></li><?php } ?>
 								<?php if ( ! empty( $prof_tw ) ){ ?><li><a href="<?php echo esc_attr( $prof_tw ); ?>"><i class="icon-rt-x-twitter"></i></a></li><?php } ?>
-								<?php if ( ! empty( $prof_lk ) ){ ?><li><a href="<?php echo esc_attr( $prof_lk ); ?>"><i class="icon-rt-linkedin"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_lk ) ){ ?><li><a href="<?php echo esc_attr( $prof_lk ); ?>"><i class="icon-linkedin"></i></a></li><?php } ?>
 								<?php if ( ! empty( $prof_vim ) ){ ?><li><a href="<?php echo esc_attr( $prof_vim ); ?>"><i class="icon-rt-vine"></i></a></li><?php } ?>
-								<?php if ( ! empty( $prof_you ) ){ ?><li><a href="<?php echo esc_attr( $prof_you ); ?>"><i class="icon-rt-youtube-2"></i></a></li><?php } ?>
-								<?php if ( ! empty( $prof_ins ) ){ ?><li><a href="<?php echo esc_attr( $prof_ins ); ?>"><i class="icon-rt-instagram"></i></a></li><?php } ?>
-								<?php if ( ! empty( $prof_pin ) ){ ?><li><a href="<?php echo esc_attr( $prof_pin ); ?>"><i class="icon-rt-pinterest"></i></a></li><?php } ?>
-								<?php if ( ! empty( $prof_wht ) ){ ?><li><a href="<?php echo esc_attr( $prof_wht ); ?>"><i class="icon-rt-whatsapp"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_you ) ){ ?><li><a href="<?php echo esc_attr( $prof_you ); ?>"><i class="icon-youtube-play"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_ins ) ){ ?><li><a href="<?php echo esc_attr( $prof_ins ); ?>"><i class="icon-instagram"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_pin ) ){ ?><li><a href="<?php echo esc_attr( $prof_pin ); ?>"><i class="icon-pinterest"></i></a></li><?php } ?>
+								<?php if ( ! empty( $prof_wht ) ){ ?><li><a href="<?php echo esc_attr( $prof_wht ); ?>"><i class="icon-whatsapp"></i></a></li><?php } ?>
 							</ul>
 						</div>
 

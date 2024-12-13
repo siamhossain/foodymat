@@ -290,7 +290,7 @@ class FoodymatWcFunctions {
 				esc_attr( $product->get_sku() )
 			);
 		} else {
-			echo sprintf( '<a rel="nofollow" class="btn button-2" title="%s" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">' . $html . '</a>',
+			echo sprintf( '<a rel="nofollow" class="btn button-2 add_to_cart_button ajax_add_to_cart fmp-mini-cart added" title="%s" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">' . $html . '</a>',
 				esc_attr( $product->add_to_cart_text() ),
 				esc_url( $product->add_to_cart_url() ),
 				esc_attr( isset( $quantity ) ? $quantity : 1 ),

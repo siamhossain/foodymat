@@ -55,7 +55,6 @@ class Team extends Customizer {
 					'default' => __( 'Team 01', 'foodymat' ),
 					'2'    => __( 'Team 02', 'foodymat' ),
 					'3'    => __( 'Team 03', 'foodymat' ),
-					'4'    => __( 'Team 04', 'foodymat' ),
 				]
 			],
 

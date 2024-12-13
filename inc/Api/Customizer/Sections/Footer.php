@@ -51,7 +51,7 @@ class Footer extends Customizer {
 				'type'    => 'image_select',
 				'label'   => __( 'Choose Layout', 'foodymat' ),
 				'default' => '1',
-				'choices' => Fns::image_placeholder( 'footer', 2 )
+				'choices' => Fns::image_placeholder( 'footer', 1 )
 			],
 
 			'rt_footer_width' => [

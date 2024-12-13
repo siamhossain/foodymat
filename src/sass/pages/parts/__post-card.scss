@@ -8,14 +8,16 @@
 		}
 	}
 	//Post Title
-	.entry-title {
-		@include font_size(24px, 32px);
-		font-weight: 700;
-		margin-bottom: 14px;
-		a {
-			color: $title_color;
-			&:hover {
-				@extend .primaryColor;
+	.entry-header {
+		.entry-title {
+			@include font_size(24px, 32px);
+			font-weight: 700;
+			margin-bottom: 14px;
+			a {
+				color: $title_color;
+				&:hover {
+					@extend .primaryColor;
+				}
 			}
 		}
 	}

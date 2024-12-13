@@ -29,7 +29,7 @@
 	.dark-logo, .rt-mobile-logo {
 		display: none;
 	}
-	.foodymat-navigation .menu-main-menu-container {
+	.foodymat-navigation .menu-main-menu-container, .menu-menu-right-container, .menu-menu-left-container {
 		> ul {
 			> li {
 				> a {
@@ -41,6 +41,9 @@
 				}
 			}
 		}
+	}
+	.menu-menu-left-container {
+
 	}
 	.ham-burger {
 		.btn-hamburger {

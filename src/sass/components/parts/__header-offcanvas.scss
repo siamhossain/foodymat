@@ -48,7 +48,7 @@
 		line-height: 1.3;
 
 		&:hover {
-			@extend .tertiaryColor;
+			@extend .primaryColor;
 		}
 	}
 	nav ul li ul a {
@@ -58,7 +58,7 @@
 
 	ul li.current-menu-item > a,
 	ul li.current-menu-ancestor > a {
-		@extend .tertiaryColor;
+		@extend .primaryColor;
 	}
 
 	.caret {
@@ -71,10 +71,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: $gray20;
+		background-color: $primary_color;
 		border-radius: 50%;
 		svg {
-			fill: $title_color;
+			fill: $white_color;
 		}
 	}
 	ul > li {

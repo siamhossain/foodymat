@@ -1,4 +1,7 @@
 .ham-burger {
+	@media (min-width: 1024px) {
+		//display: none;
+	}
 	.menu-bar {
 		position: relative;
 		display: flex;

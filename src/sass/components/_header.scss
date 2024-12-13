@@ -6,7 +6,7 @@ $dropdown_top_bottom_margin: 10px;
 	.rt-mobile-logo,
 	.light-logo,
 	.mobile-hamburg {
-		display: none;
+		//display: none;
 	}
 }
 
@@ -20,6 +20,20 @@ $dropdown_top_bottom_margin: 10px;
 @media (max-width: 1024px) {
 	.rt-site-logo,
 	.desktop-hamburg {
+		//display: none;
+	}
+}
+
+@media (max-width: 1024px) {
+	.desktop-hamburg {
+		display: none;
+	}
+	.mobile-hamburg {
+		//display: none;
+	}
+}
+@media (min-width: 1024px) {
+	.mobile-hamburg {
 		display: none;
 	}
 }
@@ -64,12 +78,16 @@ $dropdown_top_bottom_margin: 10px;
 
 .phone-with-menu-icon-wrapper {
 	gap: 24px;
+	@media (max-width: 1024px) {
+		flex: 1;
+		justify-content: end;
+	}
 }
 
 //Header phone
 .phone-item {
 	display: none;
-	@media (min-width: 992px) {
+	@media (min-width: 1340px) {
 		display: flex;
 	}
 	i {
@@ -208,6 +226,11 @@ $dropdown_top_bottom_margin: 10px;
 	.has-button li:nth-last-child(1)::after,
 	.has-button li:nth-last-child(2)::after {
 		content: none;
+	}
+	@media (max-width: 1200px) {
+		.rt-button {
+			display: none;
+		}
 	}
 }
 

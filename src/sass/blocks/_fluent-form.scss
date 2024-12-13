@@ -28,3 +28,29 @@ Fluent form style
 	}
 }
 
+//check-box
+.rt-subscription-checkbox {
+	.ff-el-form-check {
+		.ff-el-form-check-label {
+			input {
+
+			}
+			span {
+				color: #bebcbc;
+			}
+		}
+	}
+}
+
+//footer copyright
+.rt-footer-copyright-text {
+	p {
+		a {
+			color: $white_color;
+			&:hover {
+				color: $primary_color;
+			}
+		}
+	}
+}
+

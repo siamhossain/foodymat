@@ -41,6 +41,7 @@
 			Foodymat.ProgressBar();
 			Foodymat.rtOpenTabs();
 			Foodymat.countDown();
+			Foodymat.rtCategorySearchDropdown();
         },
 
 		rtElementorParallax: function () {
@@ -123,7 +124,95 @@
 		},
 
 		// Ajax search 1
-        AjaxSearch: function () {
+        // AjaxSearch: function () {
+		// 	if ($(".rt-hero-section-search").length) {
+		// 		$(".rt-hero-section-search").focusin(function () {
+		// 			$('body').addClass('rt-search-active');
+		// 			$(this).css('z-index', '100')
+		// 		});
+		// 		$(".rt-hero-section-search").focusout(function () {
+		// 			$('body').removeClass('rt-search-active');
+		// 			$(this).attr('style', '')
+		// 		});
+		// 	}
+		// 	//nice-select
+		// 	if ($(".rt-search-box-form").length) {
+		// 		$('select').niceSelect();
+		// 	}
+		// 	// Search ajax
+		// 	if ($("#rt_datafetch").length) {
+		// 		$('#searchInput').on('keyup', function () {
+		// 			fetchResults();
+		// 		});
+		// 		$(document).on('foodymat_search_input_change', function () {
+		// 			fetchResults();
+		// 			$('#searchInput').focus();
+		// 		});
+		// 		function fetchResults() {
+		// 			var keyword = $('#searchInput').val();
+		// 			var meta = $('#categories').val();
+		// 			var searchkey = $('.rt-addon-search .keyword a').val();
+		// 			var searchTerm = $('#searchInput').val();
+		// 			$('#cleanText').on('click', function () {
+		// 				$('#searchInput').val('');
+		// 				$('.rt-search-box-container').removeClass('rt-search-container');
+		// 			});
+		// 			if (searchTerm.length > 0) {
+		// 				$('.rt-search-box-container').addClass('rt-search-container');
+		//
+		// 			} else {
+		// 				$('.rt-search-box-container').removeClass('rt-search-container');
+		// 			}
+		//
+		// 			if (keyword.length < 3) {
+		// 				$('#rt_datafetch').html("<span class='letters'>Minimum 3 Latters</span>");
+		// 				return;
+		// 			}
+		// 			$.ajax({
+		// 				url: foodymatObj.ajaxURL,
+		// 				type: 'post',
+		// 				data: {
+		// 					action: 'rt_data_fetch',
+		// 					security: foodymatObj.foodymatNonce,
+		// 					keyword: keyword,
+		// 					meta: meta,
+		// 					searchkey: searchkey,
+		// 				},
+		// 				success: function (data) {
+		// 					$('#rt_datafetch').html(data);
+		// 				}
+		// 			});
+		// 		}
+		// 		//Search Keyword
+		// 		$(".rt-addon-search .keyword").on("click", function () {
+		// 			var keyword = $(this).text();
+		// 			$('.rt-input-wrap #searchInput').val(keyword);
+		// 			$(document).trigger('foodymat_search_input_change');
+		// 		});
+		//
+		// 	}
+		//
+		// 	$('form.rt-search-box-form').on('submit', function (e){
+		// 		e.preventDefault();
+		// 		var $form = $(this);
+		// 		var catLink = $form.find('select[name=categories]').val();
+		// 		var searchValue = $form.find('input.search-box-input').val();
+		// 		if(catLink) {
+		// 			var newUrl = new URL(catLink);
+		// 			if(searchValue){
+		// 				newUrl.searchParams.set('s', searchValue);
+		// 			}
+		// 			window.location = newUrl.toString();
+		// 		}else{
+		// 			if(searchValue){
+		// 				$form[0].submit();
+		// 			}
+		// 		}
+		// 	})
+        // },
+
+		// Ajax search 1
+		AjaxSearch: function () {
 			if ($(".rt-hero-section-search").length) {
 				$(".rt-hero-section-search").focusin(function () {
 					$('body').addClass('rt-search-active');
@@ -138,6 +227,7 @@
 			if ($(".rt-search-box-form").length) {
 				$('select').niceSelect();
 			}
+
 			// Search ajax
 			if ($("#rt_datafetch").length) {
 				$('#searchInput').on('keyup', function () {
@@ -204,11 +294,66 @@
 					window.location = newUrl.toString();
 				}else{
 					if(searchValue){
+
+
 						$form[0].submit();
 					}
 				}
 			})
-        },
+		},
+
+		rtCategorySearchDropdown: function () {
+			$('.category-search-dropdown-js .dropdown-menu li').on('click', function (e) {
+				var root_parent = $(this).parents('.product-search');
+				var $parent = $(this).closest('.category-search-dropdown-js'),
+					slug = $(this).data('slug'),
+					name = $(this).text();
+				$parent.find('.cat-toggle .cat-label').text($.trim(name));
+				$parent.find('input[name="product_cat"]').val(slug);
+				root_parent.find('.product-autocomplete-js').data('tax', slug);
+				root_parent.find('.product-autocomplete-js').trigger('keyup');
+			});
+
+			$(document).on('keyup', '.product-autocomplete-js', function () {
+
+				var root_parent = $(this).parents('.product-search');
+				var keyword = root_parent.find('.product-autocomplete-js').val();
+				var taxonomy = root_parent.find('.product-autocomplete-js').data('tax');
+
+				if ( keyword.length > 1 ) {
+					$.ajax({
+						url: fashenoObj.ajaxURL,
+						type: 'POST',
+						data: {
+							'action': 'fasheno_product_search_autocomplete',
+							'category_val': taxonomy,
+							'keyword': keyword,
+						},
+						beforeSend: function () {
+							root_parent.find('.product-autoaomplete-spinner').css('opacity', '1');
+						},
+						success: function (data) {
+							root_parent.find('.result').html(data);
+						},
+						complete: function () {
+							root_parent.find('.product-autoaomplete-spinner').css('opacity', '0');
+						}
+					});
+				} else {
+					root_parent.find('.result').empty();
+				}
+			});
+
+			$(document).on('click', function (e) {
+				var t = e.srcElement || e.target;
+				if ($(t).attr('class')) {
+					$('.result-wrap').remove();
+				} else {
+
+				}
+			});
+
+		},
 
 		menuOffset: function () {
             $(".dropdown-menu > li").each(function () {
@@ -349,7 +494,7 @@
 						$timerDays.html("0 ");
 						$timerHours.html("0 ");
 						$timerMinutes.html("0 ");
-						$timerSeconds.html("Finished");
+						$timerSeconds.html("End");
 					} else {
 						const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
 						const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -756,6 +901,7 @@
 				Foodymat.ProgressBar();
 				Foodymat.rtOpenTabs();
 				Foodymat.countDown();
+				Foodymat.rtCategorySearchDropdown();
             });
 
         }

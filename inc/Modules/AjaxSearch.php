@@ -14,6 +14,9 @@ class AjaxSearch{
 	function __construct(){
 		add_action('wp_ajax_rt_data_fetch', [$this, 'rt_data_fetch']);
 		add_action('wp_ajax_nopriv_rt_data_fetch', [$this, 'rt_data_fetch']);
+
+		add_action( 'wp_ajax_foodymat_product_search_autocomplete', [ $this, 'product_search_autocomplete'] );
+		add_action( 'wp_ajax_nopriv_foodymat_product_search_autocomplete', [ $this, 'product_search_autocomplete'] );
 	}
 	public function rt_data_fetch(){
 		// Checking nonce.
@@ -57,6 +60,64 @@ class AjaxSearch{
 			<h3 class="rt-no-found"><?php esc_html_e('No Results Found', 'foodymat'); ?></h3>
 		<?php endif;
 		die();
+	}
+
+
+	/*Product advanced search Ajax */
+	public function title_filter( $where, $wp_query ){
+		global $wpdb;
+		if ( $search_term = $wp_query->get( 'foodymat_search_q' ) ) {
+			$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( $wpdb->esc_like( $search_term ) ) . '%\'';
+		}
+		return $where;
+	}
+
+	public function product_search_autocomplete() {
+		if ( isset( $_REQUEST['keyword'] ) ) {
+			$search_post_category = ($_REQUEST['category_val']) ?? '';
+			$keyword       = esc_attr( $_REQUEST['keyword'] );
+
+			$args = array(
+				'foodymat_search_q' => $keyword,
+				'post_type'      => 'product',
+				'post_status' => 'publish',
+			);
+
+			if ( ! empty( $search_post_category ) ) {
+				$args['tax_query'] = array(
+					array(
+						'taxonomy' => 'product_cat',
+						'field'    => 'slug',
+						'terms'    => $search_post_category,
+					),
+
+				);
+			}
+			add_filter( 'posts_where', [&$this,'title_filter'], 10, 2 );
+			$query = new \WP_Query( $args );
+			remove_filter( 'posts_where', [&$this,'title_filter'], 10, 2 );
+			if ( ! empty( $query ) ) {
+				if ( $query->have_posts() ) :
+					echo '<div class="result-wrap"><ul>';
+					while ( $query->have_posts() ) : $query->the_post();
+						$_product = wc_get_product( get_the_ID() );
+						echo '<li>
+                            <div class="thumb"><a href="' . get_the_permalink() . '">' . get_the_post_thumbnail('','thumbnail') . '</a></div>
+                            <div class="content">
+                            <h3 class="title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>
+                            <div class="rt-price price">'.$_product->get_price_html().'</div>
+                            </div>
+                        </li>';
+					endwhile;
+					echo '</ul></div>';
+
+				else :
+					echo '<div class="result-wrap"><ul><li><h3 class="title">' . __( 'No product found.', 'foodymat' ) . '</h3></li></ul></div>';
+				endif;
+			}
+			die();
+
+		}
 	}
 
 }

@@ -32,7 +32,8 @@
 		background-color: $gray10;
 		border-radius: 6px;
 		&:hover {
-			background-color: $tertiary_color;
+			background-color: $primary_color;
+			color: $white_color;
 		}
 	}
 }

@@ -28,6 +28,7 @@
 		.site-header {
 			&.scrolling {
 				background-color: $body_bg_color;
+
 			}
 		}
 	}
@@ -35,6 +36,21 @@
 		.site-header {
 			&.scrolling {
 				background-color: $primary_color;
+				.menu-icon-wrapper .menu-icon::before {
+					background-color: $white_color;
+				}
+				.menu-icon-wrapper .menu-icon-action li a:hover {
+					i {
+						color: $primary_color !important;
+					}
+				}
+
+				.rt-button .button-2:hover{
+					color: $primary_color;
+					&::before {
+						background-image: url(../images/button-shape-white.svg);
+					}
+				}
 			}
 		}
 	}

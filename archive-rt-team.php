@@ -13,7 +13,7 @@ get_header();
 
 $post_classes = "";
 if ( Opt::$layout == 'right-sidebar' || Opt::$layout == 'left-sidebar' ) {
-	$post_classes = 'col-sm-6 col-lg-4';
+	$post_classes = 'col-sm-6 col-lg-6';
 } else {
 	$post_classes = 'col-sm-6 col-xl-3 col-lg-4';
 }
